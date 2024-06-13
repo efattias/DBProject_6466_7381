@@ -1,0 +1,76 @@
+INSERT INTO Organizer (organizerName, phone, email) VALUES ('John Doe', 1234567890, 'john@example.com');
+INSERT INTO Organizer (organizerName, phone, email) VALUES ('Jane Smith', 2345678901, 'jane@example.com');
+INSERT INTO Organizer (organizerName, phone, email) VALUES ('Emily Johnson', 3456789012, 'emily@example.com');
+INSERT INTO Organizer (organizerName, phone, email) VALUES ('Michael Brown', 4567890123, 'michael@example.com');
+INSERT INTO Organizer (organizerName, phone, email) VALUES ('Jessica Davis', 5678901234, 'jessica@example.com');
+INSERT INTO Organizer (organizerName, phone, email) VALUES ('David Wilson', 6789012345, 'david@example.com');
+INSERT INTO Organizer (organizerName, phone, email) VALUES ('Sarah Miller', 7890123456, 'sarah@example.com');
+INSERT INTO Organizer (organizerName, phone, email) VALUES ('Chris Moore', 8901234567, 'chris@example.com');
+INSERT INTO Organizer (organizerName, phone, email) VALUES ('Ashley Taylor', 9012345678, 'ashley@example.com');
+INSERT INTO Organizer (organizerName, phone, email) VALUES ('Andrew Anderson', 1234509876, 'andrew@example.com');
+
+INSERT INTO EventType (eventType, typeDescription, eventCount) VALUES ('Sports', 'Various sports events', 1);
+INSERT INTO EventType (eventType, typeDescription, eventCount) VALUES ('Community', 'Community gatherings and social events', 1);
+INSERT INTO EventType (eventType, typeDescription, eventCount) VALUES ('Culture', 'Cultural events and activities', 1);
+INSERT INTO EventType (eventType, typeDescription, eventCount) VALUES ('Independence Day', 'Celebration of national independence', 1);
+INSERT INTO EventType (eventType, typeDescription, eventCount) VALUES ('Theatre', 'Theatre performances', 1);
+INSERT INTO EventType (eventType, typeDescription, eventCount) VALUES ('Memorial Day', 'Memorial events', 1);
+INSERT INTO EventType (eventType, typeDescription, eventCount) VALUES ('Education', 'Educational seminars and workshops', 1);
+INSERT INTO EventType (eventType, typeDescription, eventCount) VALUES ('Concert', 'Music concerts', 1);
+INSERT INTO EventType (eventType, typeDescription, eventCount) VALUES ('Festival', 'Festivals and celebrations', 1);
+INSERT INTO EventType (eventType, typeDescription, eventCount) VALUES ('Cinema', 'Film screenings and movie events', 1);
+
+INSERT INTO Participants (participantID, firstName, lastName, email, clubMember) VALUES (1, 'Alice', 'Green', 'alice@example.com', 1);
+INSERT INTO Participants (participantID, firstName, lastName, email, clubMember) VALUES (2, 'Bob', 'White', 'bob@example.com', 0);
+INSERT INTO Participants (participantID, firstName, lastName, email, clubMember) VALUES (3, 'Charlie', 'Black', 'charlie@example.com', 1);
+INSERT INTO Participants (participantID, firstName, lastName, email, clubMember) VALUES (4, 'Diana', 'Red', 'diana@example.com', 0);
+INSERT INTO Participants (participantID, firstName, lastName, email, clubMember) VALUES (5, 'Evan', 'Yellow', 'evan@example.com', 1);
+INSERT INTO Participants (participantID, firstName, lastName, email, clubMember) VALUES (6, 'Fiona', 'Blue', 'fiona@example.com', 0);
+INSERT INTO Participants (participantID, firstName, lastName, email, clubMember) VALUES (7, 'George', 'Pink', 'george@example.com', 1);
+INSERT INTO Participants (participantID, firstName, lastName, email, clubMember) VALUES (8, 'Hannah', 'Brown', 'hannah@example.com', 0);
+INSERT INTO Participants (participantID, firstName, lastName, email, clubMember) VALUES (9, 'Ian', 'Grey', 'ian@example.com', 1);
+INSERT INTO Participants (participantID, firstName, lastName, email, clubMember) VALUES (10, 'Julia', 'Orange', 'julia@example.com', 0);
+
+INSERT INTO Locations (locationName, address, capacity, accessibility, ContactPerson, parking) VALUES ('Sports Arena', '123 Sports St', 5000, 'Yes', 1, 200);
+INSERT INTO Locations (locationName, address, capacity, accessibility, ContactPerson, parking) VALUES ('Community Center', '456 Community Rd', 300, 'Yes', 2, 50);
+INSERT INTO Locations (locationName, address, capacity, accessibility, ContactPerson, parking) VALUES ('Cultural Hall', '789 Culture Ave', 800, 'Yes', 3, 100);
+INSERT INTO Locations (locationName, address, capacity, accessibility, ContactPerson, parking) VALUES ('Independence Park', '101 Freedom Blvd', 10000, 'Yes', 4, 500);
+INSERT INTO Locations (locationName, address, capacity, accessibility, ContactPerson, parking) VALUES ('Theatre House', '202 Drama Ln', 1200, 'Yes', 5, 150);
+INSERT INTO Locations (locationName, address, capacity, accessibility, ContactPerson, parking) VALUES ('Memorial Hall', '303 Remembrance Rd', 600, 'Yes', 6, 80);
+INSERT INTO Locations (locationName, address, capacity, accessibility, ContactPerson, parking) VALUES ('Education Center', '404 Learning St', 400, 'Yes', 7, 60);
+INSERT INTO Locations (locationName, address, capacity, accessibility, ContactPerson, parking) VALUES ('Concert Hall', '505 Music Ave', 2000, 'Yes', 8, 300);
+INSERT INTO Locations (locationName, address, capacity, accessibility, ContactPerson, parking) VALUES ('Festival Grounds', '606 Celebration Blvd', 8000, 'Yes', 9, 400);
+INSERT INTO Locations (locationName, address, capacity, accessibility, ContactPerson, parking) VALUES ('Cinema Complex', '707 Film St', 1500, 'Yes', 10, 250);
+
+INSERT INTO Event (eventID, eventName, eventDate, eventHour, eventDescribe, ticketPrice, maxCapacity, organizerName, eventType, locationName) VALUES (1, 'Sports Event', DATE '2024-06-01', 18, 'A local sports event.', 50, 5000, 'John Doe', 'Sports', 'Sports Arena');
+INSERT INTO Event (eventID, eventName, eventDate, eventHour, eventDescribe, ticketPrice, maxCapacity, organizerName, eventType, locationName) VALUES (2, 'Community Gathering', DATE '2024-06-05', 15, 'A gathering for the community.', 0, 300, 'Jane Smith', 'Community', 'Community Center');
+INSERT INTO Event (eventID, eventName, eventDate, eventHour, eventDescribe, ticketPrice, maxCapacity, organizerName, eventType, locationName) VALUES (3, 'Cultural Night', DATE '2024-06-10', 19, 'An evening of cultural performances.', 20, 800, 'Emily Johnson', 'Culture', 'Cultural Hall');
+INSERT INTO Event (eventID, eventName, eventDate, eventHour, eventDescribe, ticketPrice, maxCapacity, organizerName, eventType, locationName) VALUES (4, 'Independence Day', DATE '2024-06-15', 17, 'Celebration of Independence Day.', 0, 10000, 'Michael Brown', 'Independence Day', 'Independence Park');
+INSERT INTO Event (eventID, eventName, eventDate, eventHour, eventDescribe, ticketPrice, maxCapacity, organizerName, eventType, locationName) VALUES (5, 'Theatre Play', DATE '2024-06-20', 20, 'A theatre performance.', 30, 1200, 'Jessica Davis', 'Theatre', 'Theatre House');
+INSERT INTO Event (eventID, eventName, eventDate, eventHour, eventDescribe, ticketPrice, maxCapacity, organizerName, eventType, locationName) VALUES (6, 'Memorial Service', DATE '2024-06-25', 10, 'A service to remember fallen heroes.', 0, 600, 'David Wilson', 'Memorial Day', 'Memorial Hall');
+INSERT INTO Event (eventID, eventName, eventDate, eventHour, eventDescribe, ticketPrice, maxCapacity, organizerName, eventType, locationName) VALUES (7, 'Educational Workshop', DATE '2024-07-01', 14, 'A workshop on educational topics.', 10, 400, 'Sarah Miller', 'Education', 'Education Center');
+INSERT INTO Event (eventID, eventName, eventDate, eventHour, eventDescribe, ticketPrice, maxCapacity, organizerName, eventType, locationName) VALUES (8, 'Music Concert', DATE '2024-07-05', 21, 'A live music concert.', 40, 2000, 'Chris Moore', 'Concert', 'Concert Hall');
+INSERT INTO Event (eventID, eventName, eventDate, eventHour, eventDescribe, ticketPrice, maxCapacity, organizerName, eventType, locationName) VALUES (9, 'Summer Festival', DATE '2024-07-10', 16, 'A summer festival with various activities.', 25, 8000, 'Ashley Taylor', 'Festival', 'Festival Grounds');
+INSERT INTO Event (eventID, eventName, eventDate, eventHour, eventDescribe, ticketPrice, maxCapacity, organizerName, eventType, locationName) VALUES (10, 'Film Screening', DATE '2024-07-15', 19, 'A screening of a popular film.', 15, 1500, 'Andrew Anderson', 'Cinema', 'Cinema Complex');
+
+INSERT INTO Orders (orderID, ticketAmount, ticketCost, totalCost, orderDate, eventID) VALUES (1, 2, 50, 100, DATE '2024-05-01', 1);
+INSERT INTO Orders (orderID, ticketAmount, ticketCost, totalCost, orderDate, eventID) VALUES (2, 4, 0, 0, DATE '2024-05-02', 2);
+INSERT INTO Orders (orderID, ticketAmount, ticketCost, totalCost, orderDate, eventID) VALUES (3, 3, 20, 60, DATE '2024-05-03', 3);
+INSERT INTO Orders (orderID, ticketAmount, ticketCost, totalCost, orderDate, eventID) VALUES (4, 5, 0, 0, DATE '2024-05-04', 4);
+INSERT INTO Orders (orderID, ticketAmount, ticketCost, totalCost, orderDate, eventID) VALUES (5, 2, 30, 60, DATE '2024-05-05', 5);
+INSERT INTO Orders (orderID, ticketAmount, ticketCost, totalCost, orderDate, eventID) VALUES (6, 4, 0, 0, DATE '2024-05-06', 6);
+INSERT INTO Orders (orderID, ticketAmount, ticketCost, totalCost, orderDate, eventID) VALUES (7, 1, 10, 10, DATE '2024-05-07', 7);
+INSERT INTO Orders (orderID, ticketAmount, ticketCost, totalCost, orderDate, eventID) VALUES (8, 3, 40, 120, DATE '2024-05-08', 8);
+INSERT INTO Orders (orderID, ticketAmount, ticketCost, totalCost, orderDate, eventID) VALUES (9, 6, 25, 150, DATE '2024-05-09', 9);
+INSERT INTO Orders (orderID, ticketAmount, ticketCost, totalCost, orderDate, eventID) VALUES (10, 2, 15, 30, DATE '2024-05-10', 10);
+
+INSERT INTO MakeOrder (participantID, orderID) VALUES (1, 1);
+INSERT INTO MakeOrder (participantID, orderID) VALUES (2, 2);
+INSERT INTO MakeOrder (participantID, orderID) VALUES (3, 3);
+INSERT INTO MakeOrder (participantID, orderID) VALUES (4, 4);
+INSERT INTO MakeOrder (participantID, orderID) VALUES (5, 5);
+INSERT INTO MakeOrder (participantID, orderID) VALUES (6, 6);
+INSERT INTO MakeOrder (participantID, orderID) VALUES (7, 7);
+INSERT INTO MakeOrder (participantID, orderID) VALUES (8, 8);
+INSERT INTO MakeOrder (participantID, orderID) VALUES (9, 9);
+INSERT INTO MakeOrder (participantID, orderID) VALUES (10, 10);
