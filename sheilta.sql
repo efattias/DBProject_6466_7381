@@ -1,12 +1,12 @@
  -- Select Queries
- --Participants with club membership in Jerusalem for events located in Jerusalem:
+ --Participants with club membership in Jerusalem for events located in '707 Film St':
 SELECT p.participantID, p.firstName, p.lastName, e.eventName, l.locationName
 FROM Participants p
 JOIN MakeOrder mo ON p.participantID = mo.participantID
 JOIN Orders o ON mo.orderID = o.orderID
 JOIN Event e ON o.eventID = e.eventID
 JOIN Locations l ON e.locationId = l.locationId
-WHERE p.clubMember != 1 AND l.address LIKE '%Jerusalem%';
+WHERE p.clubMember != 1 AND l.address LIKE '707 Film St';
 
 --Events with capacity of at least 100 and with accessibility -גרסה ראשונה לא מורכבת:
 SELECT e.eventID, e.eventName, l.locationName, l.capacity, l.accessibility
@@ -53,21 +53,18 @@ JOIN Event e ON o.eventID = e.eventID
 WHERE (e.eventDate - o.orderDate) > 2
 ORDER BY e.eventDate, o.orderDate;
 
---the final price for clubmember and how not clubmember
-SELECT mo.orderID, mo.participantID, o.ticketAmount * o.ticketCost * (1 - 0.3 * (p.clubMember != 0)) AS finalPrice
+--the final price for clubmember
+SELECT mo.orderID, mo.participantID, o.ticketAmount * o.ticketCost * 0.7 AS finalPrice
 FROM MakeOrder mo
 JOIN Orders o ON mo.orderID = o.orderID
-JOIN Participants p ON mo.participantID = p.participantID;
+JOIN Participants p ON mo.participantID = p.participantID
+WHERE p.clubMember != 0;
 
 
 
 --Delete Queries--
 
 --Remove club membership at the end of the year
---DELETE FROM Participants
---WHERE clubMember != 0 
---  AND YEAR(NOW()) = YEAR(CURDATE());
-  
 DELETE FROM Participants
 WHERE clubMember != 0
   AND TO_CHAR(SYSDATE, 'YYYY') = '2023';

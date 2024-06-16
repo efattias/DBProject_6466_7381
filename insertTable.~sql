@@ -31,9 +31,9 @@ INSERT INTO Participants (participantID, firstName, lastName, email, clubMember)
 INSERT INTO Participants (participantID, firstName, lastName, email, clubMember) VALUES (9, 'Ian', 'Grey', 'ian@example.com', 1);
 INSERT INTO Participants (participantID, firstName, lastName, email, clubMember) VALUES (10, 'Julia', 'Orange', 'julia@example.com', 0);
 
-INSERT INTO Locations (locationId, locationName, address, capacity, accessibility, ContactPerson, parking) VALUES (1, 'Sports Arena', '123 Sports St', 5000, 'Yes', 1, 200);
-INSERT INTO Locations (locationId, locationName, address, capacity, accessibility, ContactPerson, parking) VALUES (2, 'Community Center', '456 Community Rd', 300, 'Yes', 2, 50);
-INSERT INTO Locations (locationId, locationName, address, capacity, accessibility, ContactPerson, parking) VALUES (3, 'Cultural Hall', '789 Culture Ave', 800, 'Yes', 3, 100);
+INSERT INTO Locations (locationId, locationName, address, capacity, accessibility, ContactPerson, parking) VALUES (1, 'Sports Arena', 'Jerusalem', 5000, 'Yes', 1, 200);
+INSERT INTO Locations (locationId, locationName, address, capacity, accessibility, ContactPerson, parking) VALUES (2, 'Community Center', 'Jerusalem', 300, 'Yes', 2, 50);
+INSERT INTO Locations (locationId, locationName, address, capacity, accessibility, ContactPerson, parking) VALUES (3, 'Cultural Hall', 'Jerusalem', 800, 'Yes', 3, 100);
 INSERT INTO Locations (locationId, locationName, address, capacity, accessibility, ContactPerson, parking) VALUES (4, 'Independence Park', '101 Freedom Blvd', 10000, 'Yes', 4, 500);
 INSERT INTO Locations (locationId, locationName, address, capacity, accessibility, ContactPerson, parking) VALUES (5, 'Theatre House', '202 Drama Ln', 1200, 'Yes', 5, 150);
 INSERT INTO Locations (locationId, locationName, address, capacity, accessibility, ContactPerson, parking) VALUES (6, 'Memorial Hall', '303 Remembrance Rd', 600, 'Yes', 6, 80);
