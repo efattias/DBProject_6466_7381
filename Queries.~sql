@@ -6,20 +6,13 @@ JOIN MakeOrder mo ON p.participantID = mo.participantID
 JOIN Orders o ON mo.orderID = o.orderID
 JOIN Event e ON o.eventID = e.eventID
 JOIN Locations l ON e.locationId = l.locationId
-WHERE p.clubMember != 1 AND l.address LIKE '%101 Freedom Blvd%';
+WHERE p.clubMember != 1 AND l.address LIKE '%Jerusalem%';
 
 --Events with capacity of at least 100 and with accessibility -גרסה ראשונה לא מורכבת:
 SELECT e.eventID, e.eventName, l.locationName, l.capacity, l.accessibility
 FROM Event e
 JOIN Locations l ON e.locationId = l.locationId
 WHERE l.capacity >= 50 AND l.accessibility IS NOT NULL;
-
-
--- שם משפחה של מי שהזמין מעל 100 שח
-SELECT p.lastName, o.ticketamount, o.ticketcost, o.ticketamount * o.ticketcost
-FROM Participants p JOIN MakeOrder m ON p.participantID = m.participantID
-JOIN Orders o ON o.orderID = m.orderID
-WHERE (o.ticketamount * o.ticketcost)>=100
 
 -- גרסה שניה מורכבת
 SELECT e.eventID, e.eventName, l.locationName, l.capacity, l.accessibility

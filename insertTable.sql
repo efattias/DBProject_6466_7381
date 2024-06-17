@@ -43,7 +43,7 @@ INSERT INTO Locations (locationId, locationName, address, capacity, accessibilit
 INSERT INTO Locations (locationId, locationName, address, capacity, accessibility, ContactPerson, parking) VALUES (10, 'Cinema Complex', '707 Film St', 1500, 'Yes', 10, 250);
 
 INSERT INTO Event (eventID, eventName, eventDate, eventDescribe, organizerId, eventTypeId, locationId) VALUES (1, 'Sports Event', DATE '2024-06-01', 'A local sports event.', 1, 1, 1);
-INSERT INTO Event (eventID, eventName, eventDate, eventDescribe, organizerId, eventTypeId, locationId) VALUES (2, 'Community Gathering', DATE '2024-06-05', 'A gathering for the community.', 2, 2, 2, );
+INSERT INTO Event (eventID, eventName, eventDate, eventDescribe, organizerId, eventTypeId, locationId) VALUES (2, 'Community Gathering', DATE '2024-06-05', 'A gathering for the community.', 2, 2, 2);
 INSERT INTO Event (eventID, eventName, eventDate, eventDescribe, organizerId, eventTypeId, locationId) VALUES (3, 'Cultural Night', DATE '2024-06-10', 'An evening of cultural performances.', 3, 3, 3);
 INSERT INTO Event (eventID, eventName, eventDate, eventDescribe, organizerId, eventTypeId, locationId) VALUES (4, 'Independence Day', DATE '2024-06-15', 'Celebration of Independence Day.', 4, 4, 4);
 INSERT INTO Event (eventID, eventName, eventDate, eventDescribe, organizerId, eventTypeId, locationId) VALUES (5, 'Theatre Play', DATE '2024-06-20', 'A theatre performance.', 5, 5, 5);

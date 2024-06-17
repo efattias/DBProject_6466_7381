@@ -42,16 +42,16 @@ INSERT INTO Locations (locationId, locationName, address, capacity, accessibilit
 INSERT INTO Locations (locationId, locationName, address, capacity, accessibility, ContactPerson, parking) VALUES (9, 'Festival Grounds', '606 Celebration Blvd', 8000, 'Yes', 9, 400);
 INSERT INTO Locations (locationId, locationName, address, capacity, accessibility, ContactPerson, parking) VALUES (10, 'Cinema Complex', '707 Film St', 1500, 'Yes', 10, 250);
 
-INSERT INTO Event (eventID, eventName, eventDate, eventDescribe, organizerName, eventType, locationName) VALUES (1, 'Sports Event', DATE '2024-06-01', 'A local sports event.', 1, 1, 1);
-INSERT INTO Event (eventID, eventName, eventDate, eventDescribe, organizerName, eventType, locationName) VALUES (2, 'Community Gathering', DATE '2024-06-05', 'A gathering for the community.', 2, 2, 2, );
-INSERT INTO Event (eventID, eventName, eventDate, eventDescribe, organizerName, eventType, locationName) VALUES (3, 'Cultural Night', DATE '2024-06-10', 'An evening of cultural performances.', 3, 3, 3);
-INSERT INTO Event (eventID, eventName, eventDate, eventDescribe, organizerName, eventType, locationName) VALUES (4, 'Independence Day', DATE '2024-06-15', 'Celebration of Independence Day.', 4, 4, 4);
-INSERT INTO Event (eventID, eventName, eventDate, eventDescribe, organizerName, eventType, locationName) VALUES (5, 'Theatre Play', DATE '2024-06-20', 'A theatre performance.', 5, 5, 5);
-INSERT INTO Event (eventID, eventName, eventDate, eventDescribe, organizerName, eventType, locationName) VALUES (6, 'Memorial Service', DATE '2024-06-25', 'A service to remember fallen heroes.', 6, 6, 6);
-INSERT INTO Event (eventID, eventName, eventDate, eventDescribe, organizerName, eventType, locationName) VALUES (7, 'Educational Workshop', DATE '2024-07-01', 'A workshop on educational topics.', 7, 7, 7);
-INSERT INTO Event (eventID, eventName, eventDate, eventDescribe, organizerName, eventType, locationName) VALUES (8, 'Music Concert', DATE '2024-07-05', 'A live music concert.', 8, 8, 8);
-INSERT INTO Event (eventID, eventName, eventDate, eventDescribe, organizerName, eventType, locationName) VALUES (9, 'Summer Festival', DATE '2024-07-10', 'A summer festival with various activities.', 9, 9, 9);
-INSERT INTO Event (eventID, eventName, eventDate, eventDescribe, organizerName, eventType, locationName) VALUES (10, 'Film Screening', DATE '2024-07-15', 'A screening of a popular film.', 10, 10, 10);
+INSERT INTO Event (eventID, eventName, eventDate, eventDescribe, organizerId, eventTypeId, locationId) VALUES (1, 'Sports Event', DATE '2024-06-01', 'A local sports event.', 1, 1, 1);
+INSERT INTO Event (eventID, eventName, eventDate, eventDescribe, organizerId, eventTypeId, locationId) VALUES (2, 'Community Gathering', DATE '2024-06-05', 'A gathering for the community.', 2, 2, 2, );
+INSERT INTO Event (eventID, eventName, eventDate, eventDescribe, organizerId, eventTypeId, locationId) VALUES (3, 'Cultural Night', DATE '2024-06-10', 'An evening of cultural performances.', 3, 3, 3);
+INSERT INTO Event (eventID, eventName, eventDate, eventDescribe, organizerId, eventTypeId, locationId) VALUES (4, 'Independence Day', DATE '2024-06-15', 'Celebration of Independence Day.', 4, 4, 4);
+INSERT INTO Event (eventID, eventName, eventDate, eventDescribe, organizerId, eventTypeId, locationId) VALUES (5, 'Theatre Play', DATE '2024-06-20', 'A theatre performance.', 5, 5, 5);
+INSERT INTO Event (eventID, eventName, eventDate, eventDescribe, organizerId, eventTypeId, locationId) VALUES (6, 'Memorial Service', DATE '2024-06-25', 'A service to remember fallen heroes.', 6, 6, 6);
+INSERT INTO Event (eventID, eventName, eventDate, eventDescribe, organizerId, eventTypeId, locationId) VALUES (7, 'Educational Workshop', DATE '2024-07-01', 'A workshop on educational topics.', 7, 7, 7);
+INSERT INTO Event (eventID, eventName, eventDate, eventDescribe, organizerId, eventTypeId, locationId) VALUES (8, 'Music Concert', DATE '2024-07-05', 'A live music concert.', 8, 8, 8);
+INSERT INTO Event (eventID, eventName, eventDate, eventDescribe, organizerId, eventTypeId, locationId) VALUES (9, 'Summer Festival', DATE '2024-07-10', 'A summer festival with various activities.', 9, 9, 9);
+INSERT INTO Event (eventID, eventName, eventDate, eventDescribe, organizerId, eventTypeId, locationId) VALUES (10, 'Film Screening', DATE '2024-07-15', 'A screening of a popular film.', 10, 10, 10);
 
 INSERT INTO Orders (orderID, ticketAmount, ticketCost, orderDate, eventID) VALUES (1, 2, 50, DATE '2024-05-01', 1);
 INSERT INTO Orders (orderID, ticketAmount, ticketCost, orderDate, eventID) VALUES (2, 4, 0, DATE '2024-05-02', 2);
