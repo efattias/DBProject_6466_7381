@@ -40,7 +40,7 @@ CREATE TABLE Locations
 CREATE TABLE Event
 (
   eventID INT NOT NULL,
-  eventName VARCHAR2(50) NOT NULL,
+  eventName VARCHAR2(30) NOT NULL,
   eventDate DATE NOT NULL,
   eventDescribe VARCHAR2(100) NOT NULL,
   organizerId INT NOT NULL,

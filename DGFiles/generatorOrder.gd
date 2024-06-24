@@ -4,9 +4,9 @@ Version=1
 
 [Preferences]
 Username=
-Password=2830
+Password=2946
 Database=
-DateFormat=
+DateFormat=yyyy-mm-dd hh:m
 CommitCount=0
 CommitDelay=0
 InitScript=
