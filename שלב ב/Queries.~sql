@@ -23,7 +23,8 @@ WHERE (o.ticketamount * o.ticketcost)>=100
 
 -- גרסה שניה מורכבת
 SELECT e.eventID, e.eventName, l.locationName, l.capacity, l.accessibility
-FROM Event e JOIN (SELECT locationId, locationName, capacity, accessibility 
+FROM Event e
+JOIN (SELECT locationId, locationName, capacity, accessibility 
      FROM  Locations ) l 
 ON 
     e.locationId = l.locationId
@@ -60,10 +61,10 @@ WHERE (e.eventDate - o.orderDate) > 2
 ORDER BY e.eventDate, o.orderDate;
 
 --the final price for clubmember and how not clubmember
---SELECT p.participantName, mo.participantID, mo.orderID, o.ticketAmount * o.ticketCost * (1 - 0.3 * (p.clubMember != 0)) AS finalPrice
---FROM MakeOrder mo
---JOIN Orders o ON mo.orderID = o.orderID
---JOIN Participants p ON mo.participantID = p.participantID;
+SELECT p.participantName, mo.participantID, mo.orderID, o.ticketAmount * o.ticketCost * (1 - 0.3 * (p.clubMember != 0)) AS finalPrice
+FROM MakeOrder mo
+JOIN Orders o ON mo.orderID = o.orderID
+JOIN Participants p ON mo.participantID = p.participantID;
 
 
 
@@ -95,8 +96,8 @@ SET ticketCost = ticketCost / 2
 WHERE eventID IN (
   SELECT eventID
   FROM Event
-  WHERE eventDate = TO_DATE('2024-06-05', 'YYYY-MM-DD'));
-  
+  WHERE eventDate = TO_DATE('2024-05-15', 'YYYY-MM-DD')
+);
 --Special 50% discount for participants with club membership
 UPDATE Orders
 SET ticketCost = ticketCost / 2
