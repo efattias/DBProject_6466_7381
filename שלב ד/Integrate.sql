@@ -1,3 +1,4 @@
+
 --ליצור איש שממנו יורשים מארגן משתתף ותושב
 
 --יצירת טבלת PEOPLE
@@ -20,38 +21,21 @@ select * from People;
 
 --insert data from RESIDENT and do the sequence number start from 410 (because 410line already exist)
 insert into People (peopleId, firstName, lastName)
-select (RESIDENT_ID + 410), RESIDENT_FNAME, RESIDENT_LNAME 
+select RESIDENT_ID, RESIDENT_FNAME, RESIDENT_LNAME 
 from RESIDENT r
-where (RESIDENT_ID + 410) not in (select peopleId from People);
+where RESIDENT_ID not in (select peopleId from People);
 
 --see all
 select * from People;
 
 
---הוספת מפתח זר וטיפול במארגן
--- הוספת עמודת tz
-ALTER TABLE Organizer ADD peopleId INT;
+--הפיכת מארגן ליורש מ אדם
 
 -- יצירת מפתח זר לטבלת People
 ALTER TABLE Organizer 
 ADD CONSTRAINT fk_organizers_people 
-    FOREIGN KEY (peopleId) REFERENCES People(peopleId);
-
--- הכנסת נתונים מPEOPLE
-UPDATE Organizer o
-SET peopleId = (SELECT peopleId FROM People p WHERE p.peopleId = o.organizerid);
-
---see all
-select * from Organizer;
-
---בדיקה מי משתמש בעמודה organizerId
---SELECT constraint_name FROM user_constraints WHERE table_name = 'ORGANIZER' AND constraint_type = 'R';
---EVENT משתמש בו אז נשנה אותו
---UPDATE Event e SET organizerId = (SELECT peopleId FROM Organizer o WHERE o.organizerId = e.organizerId);
---CREATE UNIQUE INDEX unique_peopleId ON Organizer(peopleId);
---יצירת מפתח זר חדש
---ALTER TABLE Event DROP CONSTRAINT SYS_C009449;
---ALTER TABLE Event ADD CONSTRAINT FK_ORGANIZERS_PEOPLE FOREIGN KEY (organizerId) REFERENCES Organizer(peopleId);
+    FOREIGN KEY (organizerId) REFERENCES People(peopleId);
+--alter table Organizer drop constraint fk_organizers_people;
 
 -- מחיקת העמודות המקבילות
 ALTER TABLE Organizer DROP COLUMN organizerName;
@@ -60,20 +44,12 @@ ALTER TABLE Organizer DROP COLUMN organizerName;
 select * from Organizer;
 
 
-
-
---הוספת מפתח זר וטיפול במשתתף
--- הוספת עמודת tz
-ALTER TABLE Participants ADD peopleId INT;
-
+--הפיכת משתתף ליורש מ אדם
 -- יצירת מפתח זר לטבלת People
 ALTER TABLE Participants 
 ADD CONSTRAINT fk_participants_people 
-    FOREIGN KEY (peopleId) REFERENCES People(peopleId);
-
--- הכנסת נתונים מPEOPLE
-UPDATE Participants p
-SET peopleId = (SELECT peopleId FROM People p1 WHERE p1.peopleId = p.participantid);
+    FOREIGN KEY (participantID) REFERENCES People(peopleId);
+--alter table Participants drop constraint fk_participants_people;
 
 -- מחיקת העמודות המקבילות
 ALTER TABLE Participants DROP COLUMN firstName;
@@ -83,23 +59,13 @@ ALTER TABLE Participants DROP COLUMN lastName;
 select * from Participants;
 
 
-
-
-
-
-
---הוספת מפתח זר וטיפול בתושב
--- הוספת עמודת tz
-ALTER TABLE RESIDENT ADD peopleId INT;
+--הפיכת תושב ליורש מ אדם
 
 -- יצירת מפתח זר לטבלת People
 ALTER TABLE RESIDENT 
 ADD CONSTRAINT fk_RESIDENT_people 
-    FOREIGN KEY (peopleId) REFERENCES People(peopleId);
-
--- הכנסת נתונים מPEOPLE
-UPDATE RESIDENT r
-SET peopleId = (SELECT peopleId FROM People p1 WHERE (p1.peopleId - 410) = r.resident_id);
+    FOREIGN KEY (RESIDENT_ID) REFERENCES People(peopleId);
+--alter table RESIDENT drop constraint fk_RESIDENT_people;
 
 -- מחיקת העמודות המקבילות
 ALTER TABLE RESIDENT DROP COLUMN RESIDENT_FNAME;
@@ -120,6 +86,8 @@ SET locationId = ROWNUM;
 
 ALTER TABLE ASSET ADD CONSTRAINT fk_asset_location FOREIGN KEY (locationId) REFERENCES Locations(locationId);
 
+alter table ASSET drop constraint fk_asset_location;
+
 select * from Asset;
 select * from Locations;
 
@@ -139,15 +107,22 @@ where p.payment_id not in (select paymentId from MakeOrder) ;
 select * from MakeOrder;
 select * from PAYMENT;
 
+--זה שייך להגנה
+--INSERT INTO People (peopleId, firstName, lastName) VALUES (1000, 'John', 'Johnny');
 
-INSERT INTO People (peopleId, firstName, lastName) VALUES (1000, 'John', 'Johnny');
-
-select firstName, peopleid
-from People p
-where p.peopleid not in (select p1.participantid from Participants p1)
- and p.peopleid not in (select o.organizerid from Organizer o) 
- and p.peopleid not in (select r.resident_id from RESIDENT r);
-
-
+--select firstName, peopleid
+--from People p
+--where p.peopleid not in (select p1.participantid from Participants p1)
+-- and p.peopleid not in (select o.organizerid from Organizer o) 
+-- and p.peopleid not in (select r.resident_id from RESIDENT r);
 
 
+
+
+
+--drop table PAYMENT;
+--drop table RESIDENT;
+--drop table ASSET;
+--drop table DEBT;
+--drop table TAX_ACCOUNT;
+--drop table OWNERSHIP;
