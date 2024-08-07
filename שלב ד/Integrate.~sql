@@ -35,8 +35,7 @@ select * from People;
 ALTER TABLE Organizer 
 ADD CONSTRAINT fk_organizers_people 
     FOREIGN KEY (organizerId) REFERENCES People(peopleId);
-    
-alter table Organizer drop constraint fk_organizers_people;
+--alter table Organizer drop constraint fk_organizers_people;
 
 -- מחיקת העמודות המקבילות
 ALTER TABLE Organizer DROP COLUMN organizerName;
@@ -44,16 +43,13 @@ ALTER TABLE Organizer DROP COLUMN organizerName;
 --see all
 select * from Organizer;
 
---הפיכת משתתף ליורש מ אדם
---הוספת מפתח זר וטיפול במשתתף
-alter table Participants drop column peopleId;
 
+--הפיכת משתתף ליורש מ אדם
 -- יצירת מפתח זר לטבלת People
 ALTER TABLE Participants 
 ADD CONSTRAINT fk_participants_people 
     FOREIGN KEY (participantID) REFERENCES People(peopleId);
-    
-alter table Participants drop constraint fk_participants_people;
+--alter table Participants drop constraint fk_participants_people;
 
 -- מחיקת העמודות המקבילות
 ALTER TABLE Participants DROP COLUMN firstName;
@@ -63,25 +59,13 @@ ALTER TABLE Participants DROP COLUMN lastName;
 select * from Participants;
 
 
-
-
-
-
-
---הוספת מפתח זר וטיפול בתושב
--- הוספת עמודת tz
-ALTER TABLE RESIDENT ADD peopleId INT;
+--הפיכת תושב ליורש מ אדם
 
 -- יצירת מפתח זר לטבלת People
 ALTER TABLE RESIDENT 
 ADD CONSTRAINT fk_RESIDENT_people 
-    FOREIGN KEY (peopleId) REFERENCES People(peopleId);
-    
-alter table RESIDENT drop constraint fk_RESIDENT_people;
-
--- הכנסת נתונים מPEOPLE
-UPDATE RESIDENT r
-SET peopleId = (SELECT peopleId FROM People p1 WHERE (p1.peopleId - 410) = r.resident_id);
+    FOREIGN KEY (RESIDENT_ID) REFERENCES People(peopleId);
+--alter table RESIDENT drop constraint fk_RESIDENT_people;
 
 -- מחיקת העמודות המקבילות
 ALTER TABLE RESIDENT DROP COLUMN RESIDENT_FNAME;

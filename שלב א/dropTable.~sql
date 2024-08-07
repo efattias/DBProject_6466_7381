@@ -5,4 +5,3 @@ drop table Participants;
 drop table Locations;
 drop table EventType;
 drop table Organizer;
-

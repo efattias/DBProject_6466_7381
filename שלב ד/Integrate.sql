@@ -27,7 +27,7 @@ where RESIDENT_ID not in (select peopleId from People);
 
 --see all
 select * from People;
-
+select * from RESIDENT;
 
 --הפיכת מארגן ליורש מ אדם
 
@@ -36,9 +36,6 @@ ALTER TABLE Organizer
 ADD CONSTRAINT fk_organizers_people 
     FOREIGN KEY (organizerId) REFERENCES People(peopleId);
 --alter table Organizer drop constraint fk_organizers_people;
-
--- מחיקת העמודות המקבילות
-ALTER TABLE Organizer DROP COLUMN organizerName;
 
 --see all
 select * from Organizer;
@@ -51,10 +48,6 @@ ADD CONSTRAINT fk_participants_people
     FOREIGN KEY (participantID) REFERENCES People(peopleId);
 --alter table Participants drop constraint fk_participants_people;
 
--- מחיקת העמודות המקבילות
-ALTER TABLE Participants DROP COLUMN firstName;
-ALTER TABLE Participants DROP COLUMN lastName;
-
 --see all
 select * from Participants;
 
@@ -66,10 +59,6 @@ ALTER TABLE RESIDENT
 ADD CONSTRAINT fk_RESIDENT_people 
     FOREIGN KEY (RESIDENT_ID) REFERENCES People(peopleId);
 --alter table RESIDENT drop constraint fk_RESIDENT_people;
-
--- מחיקת העמודות המקבילות
-ALTER TABLE RESIDENT DROP COLUMN RESIDENT_FNAME;
-ALTER TABLE RESIDENT DROP COLUMN RESIDENT_LNAME;
 
 --see all
 select * from RESIDENT;
@@ -94,18 +83,18 @@ select * from Locations;
 
 --3
 --connect between payment to makeorder
-ALTER TABLE MakeOrder ADD paymentId INT;
-alter table MakeOrder drop column paymentId;
+--ALTER TABLE MakeOrder ADD paymentId INT;
+--alter table MakeOrder drop column paymentId;
 
 
-insert into MakeOrder (Paymentid) 
-select PAYMENT_ID
-from PAYMENT p
-where p.payment_id not in (select paymentId from MakeOrder) ;
+--insert into MakeOrder (Paymentid) 
+--select PAYMENT_ID
+--from PAYMENT p
+--where p.payment_id not in (select paymentId from MakeOrder) ;
 
 
-select * from MakeOrder;
-select * from PAYMENT;
+--select * from MakeOrder;
+--select * from PAYMENT;
 
 --זה שייך להגנה
 --INSERT INTO People (peopleId, firstName, lastName) VALUES (1000, 'John', 'Johnny');
@@ -119,10 +108,18 @@ select * from PAYMENT;
 
 
 
+drop table People;
+drop table PAYMENT;
+drop table DEBT;
+drop table OWNERSHIP;
+drop table RESIDENT;
+drop table ASSET;
+drop table TAX_ACCOUNT;
 
---drop table PAYMENT;
---drop table RESIDENT;
---drop table ASSET;
---drop table DEBT;
---drop table TAX_ACCOUNT;
---drop table OWNERSHIP;
+select * from PAYMENT;
+select * from DEBT;
+select * from OWNERSHIP;
+select * from RESIDENT;
+select * from ASSET;
+select * from TAX_ACCOUNT;
+
